@@ -1,13 +1,9 @@
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.File;
 import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
 
@@ -24,13 +20,10 @@ public class Main {
             for (int i = 0; i < 50; i++) {
                 fileWriter.write((i + 1) + ". " + movies.select("a").get(i).text() + " - "
                 + rating.select("strong").get(i).text() + "\n");
-                //System.out.println(movies.select("a").get(i).text());
-                //System.out.println(rating.select("strong").get(i).text());
             }
             fileWriter.close();
         } catch (Exception e) {
             System.err.println(e);
         }
-
     }
 }
